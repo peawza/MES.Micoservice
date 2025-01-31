@@ -1,0 +1,35 @@
+<Project>
+
+  <!-- Common package versions -->
+ 
+  <PropertyGroup>
+    <!--  TargetFramework Web API  -->
+    <Version_TargetFramework>net8.0</Version_TargetFramework>
+
+  </PropertyGroup>
+
+  <!-- versions EntityFrameworkCore  -->
+  <PropertyGroup>
+    <Version_EntityFrameworkCore>8.0.11</Version_EntityFrameworkCore>
+ 
+
+  </PropertyGroup>
+
+  <!-- versions PostgreSQL  -->
+   <PropertyGroup>
+  
+    <Version_Npgsql>8.0.6</Version_Npgsql>
+    <Version_PostgreSQLCopyHelper>2.8.0</Version_PostgreSQLCopyHelper>
+    <Version_EntityFrameworkCore_PostgreSQL>8.0.11</Version_EntityFrameworkCore_PostgreSQL>
+
+  </PropertyGroup>
+
+ <!-- versions Libs  -->
+  <PropertyGroup>
+    <Version_AutoMapper>13.0.1</Version_AutoMapper>
+ 
+
+  </PropertyGroup>
+
+
+</Project>

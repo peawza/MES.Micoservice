@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  service.upload:
+    image: ${DOCKER_REGISTRY-}serviceupload
+    build:
+      context: .
+      dockerfile: BackEnd/Service.Upload/Dockerfile
+    

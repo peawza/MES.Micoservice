@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "service.pdf": "StartDebugging",
+        "service.excel": "StartDebugging",
+        "service.email": "StartDebugging",
+        "gatewaysolution": "StartDebugging",
+        "service.upload": "StartDebugging"
+      }
+    }
+  }
+}
