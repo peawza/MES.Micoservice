@@ -1,12 +1,12 @@
 [submodule "Authentication"]
 	path = BackEnd/Authentication
 	url = https://github.com/peawza/MES.Auth.git
-	branch = master
+	branch = main
 [submodule "Production"]
 	path = BackEnd/Production
 	url = https://github.com/peawza/MES.API.Production.git
-	branch = master
+	branch = main
 [submodule "FrontEnd"]
 	path =FrontEnd
 	url = https://github.com/peawza/MES.FrontEnd.git
-	branch = master
+	branch = main
