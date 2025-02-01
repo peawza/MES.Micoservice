@@ -40,9 +40,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Upload", "Service\B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dashboard", "_Dashboard", "{DED57044-2A2D-44A8-9223-F236679FE9E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardAspire", "..\DashboardAspire\DashboardAspire.csproj", "{F18F0C62-03AF-4C49-8A4B-4FF3D8FC04A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardAspire", "..\DashboardAspire\DashboardAspire.csproj", "{F18F0C62-03AF-4C49-8A4B-4FF3D8FC04A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.ServiceDefaults", "DashboardAspire\Aspire.ServiceDefaults\Aspire.ServiceDefaults\Aspire.ServiceDefaults.csproj", "{A5BE0B67-5413-4DB8-BCA4-ABB5EC60059D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aspire.ServiceDefaults", "DashboardAspire\Aspire.ServiceDefaults\Aspire.ServiceDefaults\Aspire.ServiceDefaults.csproj", "{A5BE0B67-5413-4DB8-BCA4-ABB5EC60059D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{46FC3199-505A-4C0F-A590-7905AB02C74C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationPostgreSQLDB", "Service\Auth\Database\ApplicationPostgreSQLDB\ApplicationPostgreSQLDB.csproj", "{54BDD52D-7F42-4F48-B957-3158F1F32DD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authentication", "Service\Auth\Services\Authentication\Authentication.csproj", "{0EAA230B-31F9-40C5-8B8B-07B64B086D0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,6 +100,14 @@ Global
 		{A5BE0B67-5413-4DB8-BCA4-ABB5EC60059D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5BE0B67-5413-4DB8-BCA4-ABB5EC60059D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5BE0B67-5413-4DB8-BCA4-ABB5EC60059D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BDD52D-7F42-4F48-B957-3158F1F32DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BDD52D-7F42-4F48-B957-3158F1F32DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BDD52D-7F42-4F48-B957-3158F1F32DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BDD52D-7F42-4F48-B957-3158F1F32DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EAA230B-31F9-40C5-8B8B-07B64B086D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EAA230B-31F9-40C5-8B8B-07B64B086D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EAA230B-31F9-40C5-8B8B-07B64B086D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EAA230B-31F9-40C5-8B8B-07B64B086D0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +125,9 @@ Global
 		{205CE5A6-6D93-4E3E-973A-CC5820F002EA} = {A60DF327-8055-4885-B173-68D23A86569D}
 		{F18F0C62-03AF-4C49-8A4B-4FF3D8FC04A9} = {DED57044-2A2D-44A8-9223-F236679FE9E0}
 		{A5BE0B67-5413-4DB8-BCA4-ABB5EC60059D} = {982EE991-A3F2-42D9-90C7-E8E7D920CC49}
+		{46FC3199-505A-4C0F-A590-7905AB02C74C} = {F050F203-B211-41E9-906B-435A3FB1CE65}
+		{54BDD52D-7F42-4F48-B957-3158F1F32DD6} = {46FC3199-505A-4C0F-A590-7905AB02C74C}
+		{0EAA230B-31F9-40C5-8B8B-07B64B086D0D} = {46FC3199-505A-4C0F-A590-7905AB02C74C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {125187A8-A848-410A-9451-657AF4E882CD}
