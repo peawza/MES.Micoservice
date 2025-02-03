@@ -1,5 +1,5 @@
 [submodule "FrontEnd"]
-	path = FrontEnd/
+	path = FrontEnd
 	url = https://github.com/peawza/MES.FrontEnd.git
 	branch = main
 [submodule "Service/Auth"]
