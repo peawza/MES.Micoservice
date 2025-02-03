@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>cda415d7-782d-4685-a3e1-615b617b9a4d</UserSecretsId>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.2" />
+		<PackageReference Include="Aspire.Hosting.Redis" Version="8.2.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\MES.Micoservice\FrontEnd\WEB.APP.csproj" />
+	  <ProjectReference Include="..\MES.Micoservice\Gateway\GatewaySolution\GatewaySolution.csproj" />
+	  <ProjectReference Include="..\MES.Micoservice\Service\BackgroundServices\Service.CronJob\Service.CronJob.csproj" />
+	  <ProjectReference Include="..\MES.Micoservice\Service\BackgroundServices\Service.Email\Service.Email.csproj" />
+	  <ProjectReference Include="..\MES.Micoservice\Service\BackgroundServices\Service.Excel\Service.Excel\Service.Excel.csproj" />
+	  <ProjectReference Include="..\MES.Micoservice\Service\BackgroundServices\Service.PDF\Service.PDF.csproj" />
+	  <ProjectReference Include="..\MES.Micoservice\Service\BackgroundServices\Service.Upload\Service.Upload.csproj" />
+	</ItemGroup>
+
+</Project>
