@@ -2,3 +2,11 @@
 	path = FrontEnd
 	url = https://github.com/peawza/MES.FrontEnd.git
 	branch = main
+[submodule "Service/Auth"]
+	path = Service/Auth
+	url = https://github.com/peawza/MES.Auth.git
+	branch = main
+[submodule "Service/BackgroundServices"]
+	path = Service/BackgroundServices
+	url = https://github.com/peawza/MES.Service.BackgroundServices.git
+	branch = main
