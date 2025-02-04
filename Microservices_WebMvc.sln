@@ -60,6 +60,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "consoleMigration", "Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardAspire", "DashboardAspire\DashboardAspire\DashboardAspire.csproj", "{BC668242-42C7-4407-ADF1-928124EE6289}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionPostgreSQLDB", "Service\Production\ProductionPostgreSQLDB\ProductionPostgreSQLDB.csproj", "{F45F744E-1F3B-493F-AD6A-BCD314396997}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionAPI", "Service\Production\ProductionAPI\ProductionAPI.csproj", "{4DF306FE-0622-47F2-90E8-627F75834A95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +126,14 @@ Global
 		{BC668242-42C7-4407-ADF1-928124EE6289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC668242-42C7-4407-ADF1-928124EE6289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC668242-42C7-4407-ADF1-928124EE6289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45F744E-1F3B-493F-AD6A-BCD314396997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45F744E-1F3B-493F-AD6A-BCD314396997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45F744E-1F3B-493F-AD6A-BCD314396997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45F744E-1F3B-493F-AD6A-BCD314396997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF306FE-0622-47F2-90E8-627F75834A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF306FE-0622-47F2-90E8-627F75834A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF306FE-0622-47F2-90E8-627F75834A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF306FE-0622-47F2-90E8-627F75834A95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +159,8 @@ Global
 		{C96DAB73-B2C9-46D5-8528-FF6E6931ECA1} = {F050F203-B211-41E9-906B-435A3FB1CE65}
 		{67619E4E-5649-49BF-ADCC-77326B01E8E7} = {46FC3199-505A-4C0F-A590-7905AB02C74C}
 		{BC668242-42C7-4407-ADF1-928124EE6289} = {DED57044-2A2D-44A8-9223-F236679FE9E0}
+		{F45F744E-1F3B-493F-AD6A-BCD314396997} = {D0381205-ED4D-437F-85B2-F3D257ADB977}
+		{4DF306FE-0622-47F2-90E8-627F75834A95} = {D0381205-ED4D-437F-85B2-F3D257ADB977}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {125187A8-A848-410A-9451-657AF4E882CD}
