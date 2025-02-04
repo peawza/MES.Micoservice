@@ -10,3 +10,15 @@
 	path = Service/BackgroundServices
 	url = https://github.com/peawza/MES.Service.BackgroundServices.git
 	branch = main
+
+
+
+[submodule "Service/Inventory"]
+	path = Service/Inventory
+	url = https://github.com/peawza/MES.API.Inventory.git
+	branch = main
+
+[submodule "Service/Production"]
+	path = Service/Production
+	url = https://github.com/peawza/MES.API.Production.git
+	branch = main
