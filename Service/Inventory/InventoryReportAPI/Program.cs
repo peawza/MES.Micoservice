@@ -1,4 +1,4 @@
-using InventoryReportAPI;
+.using InventoryReportAPI;
 using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);

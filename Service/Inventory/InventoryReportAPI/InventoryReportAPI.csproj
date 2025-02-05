@@ -23,4 +23,11 @@
 	  </Content>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Extensions\AutoMapper\" />
+	  <Folder Include="Models\" />
+	  <Folder Include="Repositories\" />
+	  <Folder Include="Services\" />
+	</ItemGroup>
+
 </Project>
