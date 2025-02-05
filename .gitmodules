@@ -22,3 +22,11 @@
 	path = Service/Production
 	url = https://github.com/peawza/MES.API.Production.git
 	branch = main
+[submodule "Service/Quality"]
+	path = Service/Quality
+	url = https://github.com/peawza/MES.API.Quality.git
+	branch = main
+[submodule "Service/Maintenance"]
+	path = Service/Maintenance
+	url = https://github.com/peawza/MES.API.Maintenance.git
+	branch = main
