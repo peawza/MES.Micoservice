@@ -88,11 +88,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryOperaterAPI", "Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperaterAPI", "Service\Production\ProductionOperaterAPI\ProductionOperaterAPI.csproj", "{6D38B14A-13A2-41DC-A986-4A34A5E159DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintenanceMasterPostgreSQLDB", "Service\Maintenance\MaintenanceMasterPostgreSQLDB\MaintenanceMasterPostgreSQLDB.csproj", "{6CF0FD97-89D6-429B-9F21-B970A6B1711D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaintenanceMasterPostgreSQLDB", "Service\Maintenance\MaintenanceMasterPostgreSQLDB\MaintenanceMasterPostgreSQLDB.csproj", "{6CF0FD97-89D6-429B-9F21-B970A6B1711D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintenanceOperaterPostgreSQLDB", "Service\Maintenance\MaintenanceOperaterPostgreSQLDB\MaintenanceOperaterPostgreSQLDB.csproj", "{2FC4F336-1C83-48BD-B428-AE3F6E96EC23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaintenanceOperaterPostgreSQLDB", "Service\Maintenance\MaintenanceOperaterPostgreSQLDB\MaintenanceOperaterPostgreSQLDB.csproj", "{2FC4F336-1C83-48BD-B428-AE3F6E96EC23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionOperaterPostgreSQLDB", "Service\Production\ProductionOperaterPostgreSQLDB\ProductionOperaterPostgreSQLDB.csproj", "{8493F604-1798-4A4D-889B-1B9116A5B81F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperaterPostgreSQLDB", "Service\Production\ProductionOperaterPostgreSQLDB\ProductionOperaterPostgreSQLDB.csproj", "{8493F604-1798-4A4D-889B-1B9116A5B81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualityMasterPostgreSQLDB", "Service\Quality\QualityMasterPostgreSQLDB\QualityMasterPostgreSQLDB.csproj", "{AE55191B-2F09-492D-9840-FC2B9496E574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualityOperaterPostgreSQLDB", "Service\Quality\QualityOperaterPostgreSQLDB\QualityOperaterPostgreSQLDB.csproj", "{C9064897-929A-4FB7-8D5A-99FAA23DB81C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -208,6 +212,14 @@ Global
 		{8493F604-1798-4A4D-889B-1B9116A5B81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8493F604-1798-4A4D-889B-1B9116A5B81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8493F604-1798-4A4D-889B-1B9116A5B81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE55191B-2F09-492D-9840-FC2B9496E574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE55191B-2F09-492D-9840-FC2B9496E574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE55191B-2F09-492D-9840-FC2B9496E574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE55191B-2F09-492D-9840-FC2B9496E574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9064897-929A-4FB7-8D5A-99FAA23DB81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9064897-929A-4FB7-8D5A-99FAA23DB81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9064897-929A-4FB7-8D5A-99FAA23DB81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9064897-929A-4FB7-8D5A-99FAA23DB81C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -250,6 +262,8 @@ Global
 		{6CF0FD97-89D6-429B-9F21-B970A6B1711D} = {A5FEDD70-0B6A-4E20-9289-A1070DAA25C5}
 		{2FC4F336-1C83-48BD-B428-AE3F6E96EC23} = {A5FEDD70-0B6A-4E20-9289-A1070DAA25C5}
 		{8493F604-1798-4A4D-889B-1B9116A5B81F} = {4F9ABF67-0E08-4E8D-BE20-E5423FD13941}
+		{AE55191B-2F09-492D-9840-FC2B9496E574} = {839435DD-6B1A-4CB7-8244-0D02E91D006F}
+		{C9064897-929A-4FB7-8D5A-99FAA23DB81C} = {839435DD-6B1A-4CB7-8244-0D02E91D006F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {125187A8-A848-410A-9451-657AF4E882CD}
