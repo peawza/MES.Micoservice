@@ -1,4 +1,4 @@
-namespace InventoryOperaterAPI
+namespace InventoryAPI
 {
     public class WeatherForecast
     {
