@@ -7,4 +7,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="$(Version_EntityFrameworkCore)" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(Version_EntityFrameworkCore)" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(Version_EntityFrameworkCore)" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="$(Version_EntityFrameworkCore)" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(Version_EntityFrameworkCore_PostgreSQL)" />
+	</ItemGroup>
 </Project>
