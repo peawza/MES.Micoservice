@@ -102,6 +102,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperationAPI", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityOperationAPI", "Service\Quality\QualityOperationAPI\QualityOperationAPI.csproj", "{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESSystemPostgreSQLDB", "Service\Auth\MESSystemPostgreSQLDB\MESSystemPostgreSQLDB.csproj", "{22278F2D-F8FA-4412-A96F-F04B8DEFF2C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -232,6 +234,10 @@ Global
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22278F2D-F8FA-4412-A96F-F04B8DEFF2C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22278F2D-F8FA-4412-A96F-F04B8DEFF2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22278F2D-F8FA-4412-A96F-F04B8DEFF2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22278F2D-F8FA-4412-A96F-F04B8DEFF2C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -278,6 +284,7 @@ Global
 		{A1D29A2F-6CFF-463C-BE67-52DC1372097B} = {4F9ABF67-0E08-4E8D-BE20-E5423FD13941}
 		{B8D87A5B-47DD-4A88-B5C5-F9EFD7272134} = {D0381205-ED4D-437F-85B2-F3D257ADB977}
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB} = {0248271C-8CB8-492E-877E-4C2681A91062}
+		{22278F2D-F8FA-4412-A96F-F04B8DEFF2C0} = {46FC3199-505A-4C0F-A590-7905AB02C74C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {125187A8-A848-410A-9451-657AF4E882CD}
