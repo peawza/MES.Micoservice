@@ -70,9 +70,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{839435DD-6B1A-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{A5FEDD70-0B6A-4E20-9289-A1070DAA25C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryMasterPostgreSQLDB", "Service\Inventory\InventoryMasterPostgreSQLDB\InventoryMasterPostgreSQLDB.csproj", "{D1F32001-8BB6-408A-8B74-555F2A2BA6BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryMasterPostgreSQLDB", "Service\Inventory\Database\InventoryMasterPostgreSQLDB\InventoryMasterPostgreSQLDB.csproj", "{D1F32001-8BB6-408A-8B74-555F2A2BA6BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionMasterPostgreSQLDB", "Service\Production\ProductionMasterPostgreSQLDB\ProductionMasterPostgreSQLDB.csproj", "{FEC0C73F-78B6-45E6-9A43-A8F687880D04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionMasterPostgreSQLDB", "Service\Production\Database\ProductionMasterPostgreSQLDB\ProductionMasterPostgreSQLDB.csproj", "{FEC0C73F-78B6-45E6-9A43-A8F687880D04}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionMasterAPI", "Service\Production\ProductionMasterAPI\ProductionMasterAPI.csproj", "{E6FBDC5F-3448-4B8C-92AA-E5EA02E3AE49}"
 EndProject
@@ -82,21 +82,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryReportAPI", "Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionReportAPI", "Service\Production\ProductionReportAPI\ProductionReportAPI.csproj", "{D1FE37D9-D800-41EC-BFCE-D7081866AFCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaintenanceMasterPostgreSQLDB", "Service\Maintenance\MaintenanceMasterPostgreSQLDB\MaintenanceMasterPostgreSQLDB.csproj", "{6CF0FD97-89D6-429B-9F21-B970A6B1711D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaintenanceMasterPostgreSQLDB", "Service\Maintenance\Database\MaintenanceMasterPostgreSQLDB\MaintenanceMasterPostgreSQLDB.csproj", "{6CF0FD97-89D6-429B-9F21-B970A6B1711D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityMasterPostgreSQLDB", "Service\Quality\QualityMasterPostgreSQLDB\QualityMasterPostgreSQLDB.csproj", "{AE55191B-2F09-492D-9840-FC2B9496E574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityMasterPostgreSQLDB", "Service\Quality\Database\QualityMasterPostgreSQLDB\QualityMasterPostgreSQLDB.csproj", "{AE55191B-2F09-492D-9840-FC2B9496E574}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityReportAPI", "Service\Quality\QualityReportAPI\QualityReportAPI.csproj", "{E3510631-BC37-4081-89FC-A53DD69DC5AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityOperaterPostgreSQLDB", "Service\Quality\QualityOperationPostgreSQLDB\QualityOperaterPostgreSQLDB.csproj", "{753B9BD3-5A2B-45FA-9AF2-FAB41B91E91B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityOperaterPostgreSQLDB", "Service\Quality\Database\QualityOperationPostgreSQLDB\QualityOperaterPostgreSQLDB.csproj", "{753B9BD3-5A2B-45FA-9AF2-FAB41B91E91B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryOperationAPI", "Service\Inventory\InventoryOperationAPI\InventoryOperationAPI.csproj", "{03B98D6E-E96C-434D-BAA4-21461B4D3E88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryOperaterPostgreSQLDB", "Service\Inventory\InventoryOperationPostgreSQLDB\InventoryOperaterPostgreSQLDB.csproj", "{8AD7CC10-818B-4A3A-910A-330C83143E4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryOperaterPostgreSQLDB", "Service\Inventory\Database\InventoryOperationPostgreSQLDB\InventoryOperaterPostgreSQLDB.csproj", "{8AD7CC10-818B-4A3A-910A-330C83143E4D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaintenanceOperationPostgreSQLDB", "Service\Maintenance\MaintenanceOperationPostgreSQLDB\MaintenanceOperationPostgreSQLDB.csproj", "{6B28A962-E797-470C-8F66-18200273DAE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaintenanceOperationPostgreSQLDB", "Service\Maintenance\Database\MaintenanceOperationPostgreSQLDB\MaintenanceOperationPostgreSQLDB.csproj", "{6B28A962-E797-470C-8F66-18200273DAE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperaterPostgreSQLDB", "Service\Production\ProductionOperationPostgreSQLDB\ProductionOperaterPostgreSQLDB.csproj", "{A1D29A2F-6CFF-463C-BE67-52DC1372097B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperaterPostgreSQLDB", "Service\Production\Database\ProductionOperationPostgreSQLDB\ProductionOperaterPostgreSQLDB.csproj", "{A1D29A2F-6CFF-463C-BE67-52DC1372097B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperationAPI", "Service\Production\ProductionOperationAPI\ProductionOperationAPI.csproj", "{B8D87A5B-47DD-4A88-B5C5-F9EFD7272134}"
 EndProject
