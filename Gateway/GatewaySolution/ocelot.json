@@ -1,31 +1,34 @@
 {
   "Routes": [
+    // Authentication Service
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5001
+          "Port": 50001
         }
       ],
       "UpstreamPathTemplate": "/api/auth/{everything}",
-      "UpstreamHttpMethod": [ "Get", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
     },
+
+    // Inventory Services (50101-50103)
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5002
+          "Port": 50101
         }
       ],
       "UpstreamPathTemplate": "/api/inventory/master/{everything}",
-      "UpstreamHttpMethod": [ "Get", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
@@ -36,11 +39,11 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5003
+          "Port": 50102
         }
       ],
       "UpstreamPathTemplate": "/api/inventory/operation/{everything}",
-      "UpstreamHttpMethod": [ "Get", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
@@ -51,21 +54,167 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5004
+          "Port": 50103
         }
       ],
       "UpstreamPathTemplate": "/api/inventory/report/{everything}",
-      "UpstreamHttpMethod": [ "Get", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+
+    // Maintenance Services (50201-50203)
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50201
+        }
+      ],
+      "UpstreamPathTemplate": "/api/maintenance/master/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50202
+        }
+      ],
+      "UpstreamPathTemplate": "/api/maintenance/operation/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50203
+        }
+      ],
+      "UpstreamPathTemplate": "/api/maintenance/report/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+
+    // Production Services (50301-50303)
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50301
+        }
+      ],
+      "UpstreamPathTemplate": "/api/production/master/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50302
+        }
+      ],
+      "UpstreamPathTemplate": "/api/production/operation/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50303
+        }
+      ],
+      "UpstreamPathTemplate": "/api/production/report/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+
+    // Quality Services (50401-50403)
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50401
+        }
+      ],
+      "UpstreamPathTemplate": "/api/quality/master/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50402
+        }
+      ],
+      "UpstreamPathTemplate": "/api/quality/operation/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50403
+        }
+        
+      ],
+      "UpstreamPathTemplate": "/api/quality/report/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
     }
-
-
-
-
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000"
+    "BaseUrl": "http://localhost:4443",
+    "RequestIdKey": "OcelotRequestId",
+    //"RateLimitOptions": {
+    //  "ClientIdHeader": "Client-Id",
+    //  "HttpStatusCode": 429,
+    //  "QuotaExceededMessage": "Too many requests. Please try again later.",
+    //  "EnableRateLimiting": false
+    //},
+    "FileUploadLimit": 524288000
   }
 }

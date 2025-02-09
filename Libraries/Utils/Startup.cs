@@ -291,9 +291,6 @@ namespace Utils
             Utils.Startup.ConfigController(builder);
             Utils.Startup.ConfigUtils(builder);
             Utils.Startup.ConfigSwagger(builder);
-
-
-
         }
 
 
