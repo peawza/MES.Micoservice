@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+using System.Text;
 
 namespace Utils
 {
@@ -68,8 +70,8 @@ namespace Utils
                 })
                 .AddJwtBearer(cfg =>
                 {
-                    cfg.RequireHttpsMetadata = false;
-                    cfg.SaveToken = true;
+                    // cfg.RequireHttpsMetadata = false;
+                    // cfg.SaveToken = true;
                     cfg.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
@@ -244,6 +246,8 @@ namespace Utils
                     swaggerVersion = "v" + builder.Configuration["Swagger:Version"];
                 }
 
+
+
                 app.UseSwagger();
 
 
@@ -273,5 +277,130 @@ namespace Utils
                 return next();
             });
         }
+
+    }
+
+    public partial class StartupAPIMicoService
+    {
+        public static void StartupCreateBuilder(WebApplicationBuilder builder)
+        {
+            //Utils.Startup.ConfigConstants(builder, typeof(Authentication.Constants.AUTH));
+            AuthenticationBuilder auth = Utils.Startup.ConfigAuthentication(builder);
+            Utils.Startup.ConfigRequestSize(builder);
+            Utils.Startup.ConfigCors(builder);
+            Utils.Startup.ConfigController(builder);
+            Utils.Startup.ConfigUtils(builder);
+            Utils.Startup.ConfigSwagger(builder);
+
+
+
+        }
+
+
+        public static void StartupCreateApplication(WebApplicationBuilder builder, WebApplication app)
+        {
+
+            Utils.Startup.UseCors(app);
+            Utils.Startup.UseSwagger(builder, app);
+            Utils.Startup.UseForwardedHeaders(app);
+
+
+
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.MapControllers();
+
+
+        }
+        public static void StartupCreateBuilderV_1(WebApplicationBuilder builder)
+        {
+
+
+
+
+
+            // JWT Configuration
+            var secret = "182a61aa-dcf9-4e54-812d-95ace611b6fd";
+            var issuer = "MES";
+            var audience = "MES";
+
+            var key = Encoding.UTF8.GetBytes(secret);
+
+            // Add authentication
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = true,
+                        ValidIssuer = issuer,
+                        ValidateAudience = true,
+                        ValidAudience = audience,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.Zero // ปิดเผื่อเวลา
+                    };
+                });
+
+            builder.Services.AddAuthorization();
+            builder.Services.AddControllers();
+            builder.Services.AddEndpointsApiExplorer();
+
+            // Configure Swagger
+            builder.Services.AddSwaggerGen(option =>
+            {
+                option.SwaggerDoc("v1", new OpenApiInfo { Title = "ProductionOperation API", Version = "v1" });
+
+                // เพิ่มการรองรับ Authorization ผ่าน JWT
+                option.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Description = "Enter the Bearer Authorization string as following: `Bearer Generated-JWT-Token`",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "Bearer"
+                });
+
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference= new OpenApiReference
+                            {
+                                Type=ReferenceType.SecurityScheme,
+                                Id=JwtBearerDefaults.AuthenticationScheme
+                            }
+                        },
+                        new string[] { }
+                    }
+                });
+            });
+
+
+
+
+        }
+
+        public static void StartupCreateApplicationV_1(WebApplicationBuilder builder, WebApplication app)
+        {
+
+            // Configure middleware
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.MapControllers();
+        }
+
     }
 }

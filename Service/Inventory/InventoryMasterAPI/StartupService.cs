@@ -1,7 +1,7 @@
 ﻿
 using Utils.Services;
 
-namespace InventoryReportAPI
+namespace InventoryMasterAPI
 {
     public class StartupService
     {
