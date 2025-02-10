@@ -1,4 +1,6 @@
 using InventoryMasterAPI;
+using InventoryMasterPostgreSQLDB;
+using Microsoft.EntityFrameworkCore;
 using Utils;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,16 @@ var builder = WebApplication.CreateBuilder(args);
  
  
  */
+var connectionString =
+    builder.Configuration.GetConnectionString("InventoryMasterDBConnection");
 
+//builder.Services.AddDbContext<InventoryMasterDbContext>(options =>
+//    options.UseNpgsql(connectionString));
+
+
+builder.Services.AddDbContext<InventoryMasterDbContext>(options =>
+    options.UseNpgsql(connectionString,
+        b => b.MigrationsAssembly("InventoryMasterAPI")));
 
 
 /* --- Add Repository & Service ---*/
@@ -22,6 +33,9 @@ StartupService.InitialService(builder.Services);
 
 
 StartupAPIMicoService.StartupCreateBuilder(builder);
+
+//Add AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

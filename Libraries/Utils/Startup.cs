@@ -102,6 +102,7 @@ namespace Utils
         {
             builder.Services.AddCors(options =>
             {
+                /*
                 options.AddPolicy("default", policy =>
                 {
                     if (string.IsNullOrWhiteSpace(Utils.Constants.WEB.CLIENT_URL))
@@ -122,11 +123,22 @@ namespace Utils
                             .AllowCredentials();
                     }
                 });
+                */
+
+                options.AddPolicy("AllowAll",
+                   policy =>
+                   {
+                       policy.AllowAnyOrigin()
+                             .AllowAnyHeader()
+                             .AllowAnyMethod();
+                   });
             });
         }
         public static void UseCors(WebApplication app)
         {
-            app.UseCors("default");
+            // app.UseCors("default");
+
+            app.UseCors("AllowAll");
         }
 
         public static void ConfigRequestSize(WebApplicationBuilder builder)
@@ -285,9 +297,9 @@ namespace Utils
         public static void StartupCreateBuilder(WebApplicationBuilder builder)
         {
             //Utils.Startup.ConfigConstants(builder, typeof(Authentication.Constants.AUTH));
+            Utils.Startup.ConfigCors(builder);
             AuthenticationBuilder auth = Utils.Startup.ConfigAuthentication(builder);
             Utils.Startup.ConfigRequestSize(builder);
-            Utils.Startup.ConfigCors(builder);
             Utils.Startup.ConfigController(builder);
             Utils.Startup.ConfigUtils(builder);
             Utils.Startup.ConfigSwagger(builder);

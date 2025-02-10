@@ -7,7 +7,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5001
+          "Port": 6001
         }
       ],
       "UpstreamPathTemplate": "/api/auth/{everything}",
@@ -17,14 +17,14 @@
       //}
     },
 
-    // Inventory Services (5101-5103)
+    // Inventory Services (6101-6103)
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5101
+          "Port": 6101
         }
       ],
       "UpstreamPathTemplate": "/api/inventory/master/{everything}",
@@ -39,7 +39,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5102
+          "Port": 6102
         }
       ],
       "UpstreamPathTemplate": "/api/inventory/operation/{everything}",
@@ -54,7 +54,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5103
+          "Port": 6103
         }
       ],
       "UpstreamPathTemplate": "/api/inventory/report/{everything}",
@@ -64,14 +64,14 @@
       //}
     },
 
-    // Maintenance Services (5201-5203)
+    // Maintenance Services (6201-6203)
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5201
+          "Port": 6201
         }
       ],
       "UpstreamPathTemplate": "/api/maintenance/master/{everything}",
@@ -86,7 +86,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5202
+          "Port": 6202
         }
       ],
       "UpstreamPathTemplate": "/api/maintenance/operation/{everything}",
@@ -101,7 +101,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5203
+          "Port": 6203
         }
       ],
       "UpstreamPathTemplate": "/api/maintenance/report/{everything}",
@@ -111,14 +111,14 @@
       }
     },
 
-    // Production Services (5301-5303)
+    // Production Services (6301-6303)
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5301
+          "Port": 6301
         }
       ],
       "UpstreamPathTemplate": "/api/production/master/{everything}",
@@ -133,7 +133,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5302
+          "Port": 6302
         }
       ],
       "UpstreamPathTemplate": "/api/production/operation/{everything}",
@@ -148,7 +148,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5303
+          "Port": 6303
         }
       ],
       "UpstreamPathTemplate": "/api/production/report/{everything}",
@@ -158,14 +158,14 @@
       //}
     },
 
-    // Quality Services (5401-5403)
+    // Quality Services (6401-6403)
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5401
+          "Port": 6401
         }
       ],
       "UpstreamPathTemplate": "/api/quality/master/{everything}",
@@ -180,7 +180,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5402
+          "Port": 6402
         }
       ],
       "UpstreamPathTemplate": "/api/quality/operation/{everything}",
@@ -195,7 +195,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5403
+          "Port": 6403
         }
         
       ],
@@ -215,6 +215,6 @@
     //  "QuotaExceededMessage": "Too many requests. Please try again later.",
     //  "EnableRateLimiting": false
     //},
-    "FileUploadLimit": 524288000
+    "FileUploadLimit": 24288000
   }
 }
