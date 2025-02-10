@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using SFS_SF.API.Extensions;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using Utils.Extensions;
@@ -338,8 +339,9 @@ namespace Utils
                 SupportedCultures = cultureOptions.Value.GetCultures("en")
             }.SetDefaultCulture("en");
             app.UseRequestLocalization(localizationOptions);
-            #endregion
 
+            #endregion
+            app.UseMiddleware<CustomErrorHandlerMiddleware>();
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
