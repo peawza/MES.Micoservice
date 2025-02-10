@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
-using System.Text;
+using Utils.Extensions;
 
 namespace Utils
 {
@@ -125,18 +125,30 @@ namespace Utils
                 });
                 */
 
+                //options.AddPolicy("AllowAll",
+                //   policy =>
+                //   {
+                //       policy.AllowAnyOrigin()
+                //             .AllowAnyHeader()
+                //             .AllowAnyMethod();
+                //   });
+
                 options.AddPolicy("AllowAll",
-                   policy =>
-                   {
-                       policy.AllowAnyOrigin()
-                             .AllowAnyHeader()
-                             .AllowAnyMethod();
-                   });
+                    policy =>
+                    {
+                        //policy.WithOrigins("*") // Explicitly allow frontend origin
+                        policy.AllowAnyOrigin()
+                              .AllowAnyHeader()
+                              .AllowAnyMethod();
+                        //.AllowCredentials(); // Use only if credentials (cookies, auth headers) are required
+                    });
             });
         }
         public static void UseCors(WebApplication app)
         {
             // app.UseCors("default");
+
+            //app.UseCors("AllowAll");
 
             app.UseCors("AllowAll");
         }
@@ -314,6 +326,19 @@ namespace Utils
             Utils.Startup.UseForwardedHeaders(app);
 
 
+            #region Set up Time Zone
+            var supportedCultures = new[] { "en" };
+
+            var cultureOptions = ((IApplicationBuilder)app).ApplicationServices.GetRequiredService<IOptions<ApplicationCultureOptions>>();
+
+
+            var localizationOptions = new RequestLocalizationOptions()
+            {
+                SupportedUICultures = cultureOptions.Value.GetCultures(supportedCultures),
+                SupportedCultures = cultureOptions.Value.GetCultures("en")
+            }.SetDefaultCulture("en");
+            app.UseRequestLocalization(localizationOptions);
+            #endregion
 
             app.UseHttpsRedirection();
             app.UseRouting();
@@ -323,93 +348,5 @@ namespace Utils
 
 
         }
-        public static void StartupCreateBuilderV_1(WebApplicationBuilder builder)
-        {
-
-
-
-
-
-            // JWT Configuration
-            var secret = "182a61aa-dcf9-4e54-812d-95ace611b6fd";
-            var issuer = "MES";
-            var audience = "MES";
-
-            var key = Encoding.UTF8.GetBytes(secret);
-
-            // Add authentication
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(key),
-                        ValidateIssuer = true,
-                        ValidIssuer = issuer,
-                        ValidateAudience = true,
-                        ValidAudience = audience,
-                        ValidateLifetime = true,
-                        ClockSkew = TimeSpan.Zero // ปิดเผื่อเวลา
-                    };
-                });
-
-            builder.Services.AddAuthorization();
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-
-            // Configure Swagger
-            builder.Services.AddSwaggerGen(option =>
-            {
-                option.SwaggerDoc("v1", new OpenApiInfo { Title = "ProductionOperation API", Version = "v1" });
-
-                // เพิ่มการรองรับ Authorization ผ่าน JWT
-                option.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    Description = "Enter the Bearer Authorization string as following: `Bearer Generated-JWT-Token`",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "Bearer"
-                });
-
-                option.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference= new OpenApiReference
-                            {
-                                Type=ReferenceType.SecurityScheme,
-                                Id=JwtBearerDefaults.AuthenticationScheme
-                            }
-                        },
-                        new string[] { }
-                    }
-                });
-            });
-
-
-
-
-        }
-
-        public static void StartupCreateApplicationV_1(WebApplicationBuilder builder, WebApplication app)
-        {
-
-            // Configure middleware
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.MapControllers();
-        }
-
     }
 }
