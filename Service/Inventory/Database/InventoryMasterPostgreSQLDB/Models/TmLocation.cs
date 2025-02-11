@@ -5,27 +5,29 @@ namespace InventoryMasterPostgreSQLDB.Models;
 
 public partial class TmLocation
 {
-    public int Locationid { get; set; }
+    public int LocationId { get; set; }
 
-    public string Locationcode { get; set; } = null!;
+    public string LocationCode { get; set; } = null!;
 
-    public string Locationname { get; set; } = null!;
+    public string LocationName { get; set; } = null!;
 
-    public int Areaid { get; set; }
+    public int AreaId { get; set; }
 
-    public bool Rm { get; set; }
+    public bool RmFlag { get; set; }
 
-    public bool Fg { get; set; }
+    public bool FgFlag { get; set; }
 
-    public bool Isactive { get; set; }
+    public bool WipFlag { get; set; }
 
-    public DateTime? Inactivedate { get; set; }
+    public bool ActiveFlag { get; set; }
 
-    public DateTime? Createdate { get; set; }
+    public bool DeleteFlag { get; set; }
 
-    public string? Createby { get; set; }
+    public DateTime? CreatedDate { get; set; }
 
-    public DateTime? Updatedate { get; set; }
+    public string? CreatedBy { get; set; }
 
-    public string? Updateby { get; set; }
+    public DateTime? UpdatedDate { get; set; }
+
+    public string? UpdatedBy { get; set; }
 }

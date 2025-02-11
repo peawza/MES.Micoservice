@@ -1,4 +1,6 @@
 ﻿
+using InventoryMasterAPI.Repositories;
+using InventoryMasterAPI.Services;
 using Utils.Services;
 
 namespace InventoryMasterAPI
@@ -12,9 +14,10 @@ namespace InventoryMasterAPI
             services.AddTransient<IEmailService, EmailService>();
             //EmailService : IEmailService
 
+            services.AddScoped<IIMS020Repository, IMS020Repository>();
 
             /* --- Services --- */
-
+            services.AddTransient<IIms020Service, IMS020Service>();
         }
     }
 }

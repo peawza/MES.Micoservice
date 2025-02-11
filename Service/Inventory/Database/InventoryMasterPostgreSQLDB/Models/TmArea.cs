@@ -5,29 +5,29 @@ namespace InventoryMasterPostgreSQLDB.Models;
 
 public partial class TmArea
 {
-    public int Areaid { get; set; }
+    public int AreaId { get; set; }
 
-    public string Areacode { get; set; } = null!;
+    public string AreaCode { get; set; } = null!;
 
-    public string Areaname { get; set; } = null!;
+    public string AreaName { get; set; } = null!;
 
-    public int Areatype { get; set; }
+    public int AreaType { get; set; }
 
-    public int Plantid { get; set; }
+    public int PlantId { get; set; }
 
-    public int Warehouseid { get; set; }
+    public int WarehouseId { get; set; }
 
     public string Remark { get; set; } = null!;
 
-    public bool Isactive { get; set; }
+    public bool ActiveFlag { get; set; }
 
-    public DateTime? Inactivedate { get; set; }
+    public bool DeleteFlag { get; set; }
 
-    public DateTime? Createdate { get; set; }
+    public DateTime? CreatedDate { get; set; }
 
-    public string? Createby { get; set; }
+    public string? CreatedBy { get; set; }
 
-    public DateTime? Updatedate { get; set; }
+    public DateTime? UpdatedDate { get; set; }
 
-    public string? Updateby { get; set; }
+    public string? UpdatedBy { get; set; }
 }
