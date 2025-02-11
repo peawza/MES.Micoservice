@@ -5,37 +5,37 @@ namespace InventoryMasterPostgreSQLDB.Models;
 
 public partial class TmItem
 {
-    public int Itemid { get; set; }
+    public int ItemId { get; set; }
 
-    public string Itemcode { get; set; } = null!;
+    public string ItemCode { get; set; } = null!;
 
-    public string Itemnamethai { get; set; } = null!;
+    public string ItemGroup { get; set; } = null!;
 
-    public string Itemnameeng { get; set; } = null!;
+    public string ItemNameLocal { get; set; } = null!;
 
-    public int Itemgroup { get; set; }
+    public string ItemNameEn { get; set; } = null!;
 
-    public string Partno { get; set; } = null!;
+    public string PartNo { get; set; } = null!;
 
-    public string Partname { get; set; } = null!;
+    public string PartName { get; set; } = null!;
 
-    public int Itemtype { get; set; }
+    public string ItemType { get; set; } = null!;
 
-    public int Itemsubtype { get; set; }
+    public string Unit { get; set; } = null!;
 
-    public string Stdunit { get; set; } = null!;
+    public decimal Weight { get; set; }
 
-    public decimal Stdsnp { get; set; }
+    public decimal ShelfLife { get; set; }
 
-    public bool Isactive { get; set; }
+    public bool ActiveFlag { get; set; }
 
-    public DateTime? Inactivedate { get; set; }
+    public bool DeleteFlag { get; set; }
 
-    public DateTime? Createdate { get; set; }
+    public DateTime? CreatedDate { get; set; }
 
-    public string? Createby { get; set; }
+    public string? CreatedBy { get; set; }
 
-    public DateTime? Updatedate { get; set; }
+    public DateTime? UpdatedDate { get; set; }
 
-    public string? Updateby { get; set; }
+    public string? UpdatedBy { get; set; }
 }

@@ -2,7 +2,7 @@
 -- Scaffold-DbContext
 
 
-dotnet ef dbcontext scaffold "Host=202.44.229.93;Database=MES-Inventory;Username=postgres;Password=Sa@Dmin" Npgsql.EntityFrameworkCore.PostgreSQL --output-dir Models --context InventoryMasterDbContext --context-dir . --force
+dotnet ef dbcontext scaffold "Host=localhost;Port=5433;Database=MES-Inventory;Username=postgres;Password=postdb" Npgsql.EntityFrameworkCore.PostgreSQL --output-dir Models --context InventoryMasterDbContext --context-dir . --force
 
 
 --- Add migration ---

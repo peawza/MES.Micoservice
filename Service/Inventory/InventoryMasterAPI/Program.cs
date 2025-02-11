@@ -38,7 +38,7 @@ StartupAPIMicoService.StartupCreateBuilder(builder);
 builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
-
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 StartupAPIMicoService.StartupCreateApplication(builder, app);
 app.Run();
