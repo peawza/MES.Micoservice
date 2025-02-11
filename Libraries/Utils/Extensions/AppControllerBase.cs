@@ -155,24 +155,31 @@ namespace Utils.Extensions
                 return StatusCode((int)HttpStatusCode.InternalServerError, new { statusCode = (int)HttpStatusCode.InternalServerError, errorCode = HttpStatusCode.InternalServerError, message });
             }
             //return Json(new { statusCode = (int)HttpStatusCode.OK, data = dataObject }, new JsonSerializerSettings() { ContractResolver = contractResolver, Formatting = Formatting.Indented, ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
-            return StatusCode((int)HttpStatusCode.InternalServerError, new { statusCode = (int)HttpStatusCode.InternalServerError, errorCode = HttpStatusCode.InternalServerError.ToString(), message, operation, errors = invaidError.ValidationMessages });
+            //return StatusCode((int)HttpStatusCode.InternalServerError, new { statusCode = (int)HttpStatusCode.InternalServerError, errorCode = HttpStatusCode.InternalServerError.ToString(), message, operation, errors = invaidError.ValidationMessages });
+            return StatusCode((int)HttpStatusCode.InternalServerError, new { resultStatus = false, resultCode = "999", resultMessage = "The operation was Internal Server Error.", message });
+
         }
 
         protected IActionResult InternalServerError(string message, string operation = ServerOperationTypes.Read)
         {
-            return StatusCode((int)HttpStatusCode.InternalServerError, new { statusCode = (int)HttpStatusCode.InternalServerError, errorCode = HttpStatusCode.InternalServerError.ToString(), message });
+            // return StatusCode((int)HttpStatusCode.InternalServerError, new { statusCode = (int)HttpStatusCode.InternalServerError, errorCode = HttpStatusCode.InternalServerError.ToString(), message });
+            return StatusCode((int)HttpStatusCode.InternalServerError, new { resultStatus = false, resultCode = "999", resultMessage = "The operation was Internal Server Error.", message });
+
         }
 
         protected IActionResult InternalServerError(object message)
         {
-            return StatusCode((int)HttpStatusCode.InternalServerError, new { statusCode = (int)HttpStatusCode.InternalServerError, errorCode = HttpStatusCode.InternalServerError.ToString(), message });
+            return StatusCode((int)HttpStatusCode.InternalServerError, new { resultStatus = false, resultCode = "999", resultMessage = "The operation was Internal Server Error.", message });
         }
 
 
         //BadRequest
+
         protected IActionResult ServerBadRequest(object data)
         {
-            return StatusCode((int)HttpStatusCode.BadRequest, new { statusCode = (int)HttpStatusCode.BadRequest, errorCode = HttpStatusCode.BadRequest.ToString(), message = data });
+            //return StatusCode((int)HttpStatusCode.BadRequest, new { statusCode = (int)HttpStatusCode.BadRequest, errorCode = HttpStatusCode.BadRequest.ToString(), message = data });
+            return StatusCode((int)HttpStatusCode.BadRequest, new { resultStatus = false, resultCode = "400", resultMessage = "The operation was BadRequest.", message = data });
+
         }
 
         protected IActionResult Ok(object dataObject)
@@ -181,8 +188,8 @@ namespace Utils.Extensions
             {
                 NamingStrategy = new CamelCaseNamingStrategy()
             };
-            //return Json(new { statusCode = (int)HttpStatusCode.OK, data = dataObject }, new JsonSerializerSettings() { ContractResolver = contractResolver, Formatting = Formatting.Indented, ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
-            return Json(new { statusCode = (int)HttpStatusCode.OK, data = dataObject });
+            return Json(new { resultStatus = true, resultCode = "SUCCESS", resultMessage = "The operation was successful.", data = dataObject }, new JsonSerializerSettings() { ContractResolver = contractResolver, Formatting = Formatting.Indented, ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+            //return Json(new { statusCode = (int)HttpStatusCode.OK, data = dataObject });
         }
 
         protected IActionResult JsonWithCamelNaming(object data)
