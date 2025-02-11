@@ -344,6 +344,7 @@ namespace Utils
             #endregion
             app.UseMiddleware<CustomErrorHandlerMiddleware>();
 
+
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
