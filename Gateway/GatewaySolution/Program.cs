@@ -5,11 +5,8 @@ using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddAppAuthetication();
-
 builder.Services.AddCors(options =>
 {
-
-
     options.AddPolicy("AllowAll",
         policy =>
         {
@@ -19,6 +16,7 @@ builder.Services.AddCors(options =>
 
         });
 });
+
 
 //if (builder.Environment.EnvironmentName.ToString().ToLower().Equals("production"))
 //{

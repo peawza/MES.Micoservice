@@ -316,6 +316,7 @@ namespace Utils
             Utils.Startup.ConfigController(builder);
             Utils.Startup.ConfigUtils(builder);
             Utils.Startup.ConfigSwagger(builder);
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
 
@@ -342,6 +343,7 @@ namespace Utils
 
             #endregion
             app.UseMiddleware<CustomErrorHandlerMiddleware>();
+
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
