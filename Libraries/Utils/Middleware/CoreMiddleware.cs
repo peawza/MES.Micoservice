@@ -2,7 +2,7 @@
 using System.Net;
 using System.Text;
 
-namespace SFS_SF.API.Extensions
+namespace Utils.Middleware
 {
     public class RequestTimeoutMiddleware
     {
@@ -48,8 +48,14 @@ namespace SFS_SF.API.Extensions
 
         public class CustomErrorResponse
         {
-            public int statusCode { get; set; }
-            public string errorCode { get; set; }
+            //public int statusCode { get; set; }
+            //public string errorCode { get; set; }
+            //public object message { get; set; }
+
+            public bool resultStatus { get; set; }
+
+            public string resultCode { get; set; }
+            public string resultMessage { get; set; }
             public object message { get; set; }
         }
 
@@ -89,13 +95,18 @@ namespace SFS_SF.API.Extensions
                         var bodyText = await new StreamReader(context.Response.Body).ReadToEndAsync();
                         context.Response.Body.Seek(0, SeekOrigin.Begin);
 
-                        var originalError = JsonConvert.DeserializeObject<OriginalErrorResponse>(bodyText);
+                        var originalError = JsonConvert.DeserializeObject<object>(bodyText);
 
                         var customError = new CustomErrorResponse
                         {
-                            statusCode = (int)HttpStatusCode.BadRequest,
-                            errorCode = HttpStatusCode.BadRequest.ToString(),
+                            resultStatus = false,
+                            resultCode = "400",
+                            resultMessage = "The operation was Bad Request.",
                             message = originalError
+
+                            //statusCode = (int)HttpStatusCode.BadRequest,
+                            //errorCode = HttpStatusCode.BadRequest.ToString(),
+                            //message = originalError
                         };
 
                         var result = JsonConvert.SerializeObject(customError);
@@ -147,8 +158,11 @@ namespace SFS_SF.API.Extensions
 
                         var customError = new CustomErrorResponse
                         {
-                            statusCode = (int)HttpStatusCode.UnsupportedMediaType,
-                            errorCode = HttpStatusCode.UnsupportedMediaType.ToString(),
+                            //statusCode = (int)HttpStatusCode.UnsupportedMediaType,
+                            //errorCode = HttpStatusCode.UnsupportedMediaType.ToString(),
+                            resultStatus = false,
+                            resultCode = "415",
+                            resultMessage = "The operation was Unsupported Media Type.",
                             message = originalError
                         };
 
@@ -164,55 +178,55 @@ namespace SFS_SF.API.Extensions
 
 
                     }
-                    else if (context.Response.StatusCode == (int)HttpStatusCode.OK)
-                    {
+                    //else if (context.Response.StatusCode == (int)HttpStatusCode.OK && context.Response.ContentType != "application/grpc")
+                    //{
 
-                        string requestBody = await ReadRequestBodyAsync(context.Request);
-                        //context.Response.Body.Seek(0, SeekOrigin.Begin);
-                        context.Response.Body.Seek(0, SeekOrigin.Begin);
-                        var bodyText = await new StreamReader(context.Response.Body).ReadToEndAsync();
-                        context.Response.Body.Seek(0, SeekOrigin.Begin);
-                        // var originalError = JsonConvert.DeserializeObject<CustomErrorResponse>(bodyText);
-
-
-                        // _logger.LogError(context.Request.Path, context.Request.Method, HttpStatusCode.InternalServerError, JsonConvert.DeserializeObject<dynamic>(requestBody), JsonConvert.DeserializeObject<dynamic>(bodyText), originalError.message.ToString());
-                        //_logger.LogInformation(context.Request.Path, context.Request.Method, HttpStatusCode.OK, JsonConvert.DeserializeObject<dynamic>(requestBody), JsonConvert.DeserializeObject<dynamic>(bodyText));
+                    //    string requestBody = await ReadRequestBodyAsync(context.Request);
+                    //    //context.Response.Body.Seek(0, SeekOrigin.Begin);
+                    //    context.Response.Body.Seek(0, SeekOrigin.Begin);
+                    //    var bodyText = await new StreamReader(context.Response.Body).ReadToEndAsync();
+                    //    context.Response.Body.Seek(0, SeekOrigin.Begin);
+                    //    // var originalError = JsonConvert.DeserializeObject<CustomErrorResponse>(bodyText);
 
 
-
-                        context.Response.Body.Seek(0, SeekOrigin.Begin);
-                        await responseBody.CopyToAsync(originalBodyStream);
-
-
-                        /*
-                         context.Response.Body.Seek(0, SeekOrigin.Begin);
+                    //    // _logger.LogError(context.Request.Path, context.Request.Method, HttpStatusCode.InternalServerError, JsonConvert.DeserializeObject<dynamic>(requestBody), JsonConvert.DeserializeObject<dynamic>(bodyText), originalError.message.ToString());
+                    //    //_logger.LogInformation(context.Request.Path, context.Request.Method, HttpStatusCode.OK, JsonConvert.DeserializeObject<dynamic>(requestBody), JsonConvert.DeserializeObject<dynamic>(bodyText));
 
 
-                        
-                      
 
-                        string requestBody = await ReadRequestBodyAsync(context.Request);
-
-                        // Capture the response body
-                        var originalResponseBodyStream = context.Response.Body;
+                    //    context.Response.Body.Seek(0, SeekOrigin.Begin);
+                    //    await responseBody.CopyToAsync(originalBodyStream);
 
 
-                        using var responseBodyStream = new MemoryStream();
-                        context.Response.Body = responseBodyStream;
-
-                        await _next(context);
-
-                        // Read the response body
-                        string responseBodys = await ReadResponseBodyAsync(responseBodyStream);
+                    //    /*
+                    //     context.Response.Body.Seek(0, SeekOrigin.Begin);
 
 
-                        _logger.LogInformation(context.Request.Path, context.Request.Method, HttpStatusCode.OK, JsonConvert.DeserializeObject<dynamic>(requestBody), JsonConvert.DeserializeObject<dynamic>(responseBodys));
-                        await responseBody.CopyToAsync(originalBodyStream);
-                           */
 
-                        //context.Response.Body.Seek(0, SeekOrigin.Begin);
-                        //await responseBody.CopyToAsync(originalBodyStream);
-                    }
+
+
+                    //    string requestBody = await ReadRequestBodyAsync(context.Request);
+
+                    //    // Capture the response body
+                    //    var originalResponseBodyStream = context.Response.Body;
+
+
+                    //    using var responseBodyStream = new MemoryStream();
+                    //    context.Response.Body = responseBodyStream;
+
+                    //    await _next(context);
+
+                    //    // Read the response body
+                    //    string responseBodys = await ReadResponseBodyAsync(responseBodyStream);
+
+
+                    //    _logger.LogInformation(context.Request.Path, context.Request.Method, HttpStatusCode.OK, JsonConvert.DeserializeObject<dynamic>(requestBody), JsonConvert.DeserializeObject<dynamic>(responseBodys));
+                    //    await responseBody.CopyToAsync(originalBodyStream);
+                    //       */
+
+                    //    //context.Response.Body.Seek(0, SeekOrigin.Begin);
+                    //    //await responseBody.CopyToAsync(originalBodyStream);
+                    //}
 
                     else
                     {

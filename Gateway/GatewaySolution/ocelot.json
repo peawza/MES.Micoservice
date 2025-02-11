@@ -118,7 +118,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5301
+          "Port": 6301
         }
       ],
       "UpstreamPathTemplate": "/api/production/master/{everything}",
