@@ -1,0 +1,157 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "Authentication": {
+        "ClusterId": "authCluster",
+        "Match": {
+          "Path": "/api/auth/{**catch-all}"
+        }
+      },
+      "InventoryMaster": {
+        "ClusterId": "inventoryMasterCluster",
+        "Match": {
+          "Path": "/api/inventory/master/{**catch-all}"
+        }
+      },
+      "InventoryOperation": {
+        "ClusterId": "inventoryOperationCluster",
+        "Match": {
+          "Path": "/api/inventory/operation/{**catch-all}"
+        }
+      },
+      "InventoryReport": {
+        "ClusterId": "inventoryReportCluster",
+        "Match": {
+          "Path": "/api/inventory/report/{**catch-all}"
+        }
+      },
+      "MaintenanceMaster": {
+        "ClusterId": "maintenanceMasterCluster",
+        "Match": {
+          "Path": "/api/maintenance/master/{**catch-all}"
+        },
+        "AuthorizationPolicy": "BearerAuth"
+      },
+      "MaintenanceOperation": {
+        "ClusterId": "maintenanceOperationCluster",
+        "Match": {
+          "Path": "/api/maintenance/operation/{**catch-all}"
+        },
+        "AuthorizationPolicy": "BearerAuth"
+      },
+      "MaintenanceReport": {
+        "ClusterId": "maintenanceReportCluster",
+        "Match": {
+          "Path": "/api/maintenance/report/{**catch-all}"
+        },
+        "AuthorizationPolicy": "BearerAuth"
+      },
+      "ProductionMaster": {
+        "ClusterId": "productionMasterCluster",
+        "Match": {
+          "Path": "/api/production/master/{**catch-all}"
+        }
+      },
+      "ProductionOperation": {
+        "ClusterId": "productionOperationCluster",
+        "Match": {
+          "Path": "/api/production/operation/{**catch-all}"
+        }
+      },
+      "ProductionReport": {
+        "ClusterId": "productionReportCluster",
+        "Match": {
+          "Path": "/api/production/report/{**catch-all}"
+        }
+      },
+      "QualityMaster": {
+        "ClusterId": "qualityMasterCluster",
+        "Match": {
+          "Path": "/api/quality/master/{**catch-all}"
+        },
+        "AuthorizationPolicy": "BearerAuth"
+      },
+      "QualityOperation": {
+        "ClusterId": "qualityOperationCluster",
+        "Match": {
+          "Path": "/api/quality/operation/{**catch-all}"
+        },
+        "AuthorizationPolicy": "BearerAuth"
+      },
+      "QualityReport": {
+        "ClusterId": "qualityReportCluster",
+        "Match": {
+          "Path": "/api/quality/report/{**catch-all}"
+        },
+        "AuthorizationPolicy": "BearerAuth"
+      }
+    },
+    "Clusters": {
+      "authCluster": {
+        "Destinations": {
+          "authService": { "Address": "http://localhost:5001/" }
+        }
+      },
+      "inventoryMasterCluster": {
+        "Destinations": {
+          "inventoryMasterService": { "Address": "http://localhost:5101/" }
+        }
+      },
+      "inventoryOperationCluster": {
+        "Destinations": {
+          "inventoryOperationService": { "Address": "http://localhost:5102/" }
+        }
+      },
+      "inventoryReportCluster": {
+        "Destinations": {
+          "inventoryReportService": { "Address": "http://localhost:5103/" }
+        }
+      },
+      "maintenanceMasterCluster": {
+        "Destinations": {
+          "maintenanceMasterService": { "Address": "http://localhost:5201/" }
+        }
+      },
+      "maintenanceOperationCluster": {
+        "Destinations": {
+          "maintenanceOperationService": { "Address": "http://localhost:5202/" }
+        }
+      },
+      "maintenanceReportCluster": {
+        "Destinations": {
+          "maintenanceReportService": { "Address": "http://localhost:5203/" }
+        }
+      },
+      "productionMasterCluster": {
+        "Destinations": {
+          "productionMasterService": { "Address": "http://localhost:5301/" }
+        }
+      },
+      "productionOperationCluster": {
+        "Destinations": {
+          "productionOperationService": { "Address": "http://localhost:5302/" }
+        }
+      },
+      "productionReportCluster": {
+        "Destinations": {
+          "productionReportService": { "Address": "http://localhost:5303/" }
+        }
+      },
+      "qualityMasterCluster": {
+        "Destinations": {
+          "qualityMasterService": { "Address": "http://localhost:5401/" }
+        }
+      },
+      "qualityOperationCluster": {
+        "Destinations": {
+          "qualityOperationService": { "Address": "http://localhost:5402/" }
+        }
+      },
+      "qualityReportCluster": {
+        "Destinations": {
+          "qualityReportService": { "Address": "http://localhost:5403/" }
+        }
+      }
+    }
+  }
+}

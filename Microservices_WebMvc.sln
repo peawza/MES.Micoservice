@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Libraries\Utils\Utils.csproj", "{552E2FAA-93DD-485B-8E3F-B2EFD09A016B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewaySolution", "Gateway\GatewaySolution\GatewaySolution.csproj", "{C614B1AE-A7CE-4CC1-AAC2-F962C80C4EF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway_ocelot_Solution", "Gateway\GatewaySolution\Gateway_ocelot_Solution.csproj", "{C614B1AE-A7CE-4CC1-AAC2-F962C80C4EF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundServices", "BackgroundServices", "{A60DF327-8055-4885-B173-68D23A86569D}"
 EndProject
@@ -96,11 +96,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryOperaterPostgreSQL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaintenanceOperationPostgreSQLDB", "Service\Maintenance\Database\MaintenanceOperationPostgreSQLDB\MaintenanceOperationPostgreSQLDB.csproj", "{6B28A962-E797-470C-8F66-18200273DAE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperaterPostgreSQLDB", "Service\Production\Database\ProductionOperationPostgreSQLDB\ProductionOperaterPostgreSQLDB.csproj", "{A1D29A2F-6CFF-463C-BE67-52DC1372097B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperationPostgreSQLDB", "Service\Production\Database\ProductionOperationPostgreSQLDB\ProductionOperationPostgreSQLDB.csproj", "{A1D29A2F-6CFF-463C-BE67-52DC1372097B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionOperationAPI", "Service\Production\ProductionOperationAPI\ProductionOperationAPI.csproj", "{B8D87A5B-47DD-4A88-B5C5-F9EFD7272134}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityOperationAPI", "Service\Quality\QualityOperationAPI\QualityOperationAPI.csproj", "{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayYarpSolution", "Gateway\GatewayYarpSolution\GatewayYarpSolution.csproj", "{D69FA225-CBE5-4942-BDF3-7DE4BF8E6FAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -232,6 +234,10 @@ Global
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D69FA225-CBE5-4942-BDF3-7DE4BF8E6FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D69FA225-CBE5-4942-BDF3-7DE4BF8E6FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D69FA225-CBE5-4942-BDF3-7DE4BF8E6FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D69FA225-CBE5-4942-BDF3-7DE4BF8E6FAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -278,6 +284,7 @@ Global
 		{A1D29A2F-6CFF-463C-BE67-52DC1372097B} = {4F9ABF67-0E08-4E8D-BE20-E5423FD13941}
 		{B8D87A5B-47DD-4A88-B5C5-F9EFD7272134} = {D0381205-ED4D-437F-85B2-F3D257ADB977}
 		{5C69F17A-D285-4ABF-95A6-B6AB53E765BB} = {0248271C-8CB8-492E-877E-4C2681A91062}
+		{D69FA225-CBE5-4942-BDF3-7DE4BF8E6FAF} = {5AA9E54B-0486-477B-B620-423350F4FEEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {125187A8-A848-410A-9451-657AF4E882CD}

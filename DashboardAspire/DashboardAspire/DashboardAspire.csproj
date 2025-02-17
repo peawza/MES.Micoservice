@@ -15,6 +15,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\Service\Auth\Services\Authentication\Authentication.csproj" />
+	  <ProjectReference Include="..\..\Service\Inventory\InventoryMasterAPI\InventoryMasterAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Inventory\InventoryOperationAPI\InventoryOperationAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Inventory\InventoryReportAPI\InventoryReportAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Production\ProductionMasterAPI\ProductionMasterAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Production\ProductionOperationAPI\ProductionOperationAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Production\ProductionReportAPI\ProductionReportAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Quality\QualityMasterAPI\QualityMasterAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Quality\QualityOperationAPI\QualityOperationAPI.csproj" />
+	  <ProjectReference Include="..\..\Service\Quality\QualityReportAPI\QualityReportAPI.csproj" />
 	  <ProjectReference Include="..\MES.Micoservice\FrontEnd\WEB.APP.csproj" />
 	  <ProjectReference Include="..\MES.Micoservice\Gateway\GatewaySolution\GatewaySolution.csproj" />
 	  <ProjectReference Include="..\MES.Micoservice\Service\BackgroundServices\Service.CronJob\Service.CronJob.csproj" />
